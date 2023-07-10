@@ -60,16 +60,19 @@ class IndexManagementBackwardsCompatibilityIT : IndexManagementRestTestCase() {
 
                     verifyPolicyExists(LEGACY_POLICY_BASE_URI)
                     verifyPolicyOnIndex(LEGACY_ISM_BASE_URI)
+                    logger.debug("ronsax passed first block")
                 }
                 ClusterType.MIXED -> {
                     assertTrue(pluginNames.contains("opensearch-index-management"))
                     verifyPolicyExists(LEGACY_POLICY_BASE_URI)
                     verifyPolicyOnIndex(LEGACY_ISM_BASE_URI)
+                    logger.debug("ronsax passed second block")
                 }
                 ClusterType.UPGRADED -> {
                     assertTrue(pluginNames.contains("opensearch-index-management"))
                     verifyPolicyExists(LEGACY_POLICY_BASE_URI)
                     verifyPolicyOnIndex(LEGACY_ISM_BASE_URI)
+                    logger.debug("ronsax passed third block")
                 }
             }
             break
